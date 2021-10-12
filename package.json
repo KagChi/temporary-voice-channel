@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "name": "discord-bot-sapphire-template",
+  "description": "A sapphire framework discord bot template written in typescript.",
+  "dependencies": {
+    "@discordjs/builders": "^0.5.0",
+    "@sapphire/decorators": "^2.2.0",
+    "@sapphire/framework": "^2.0.0-next.1848f530.0",
+    "chalk": "^4.1.2",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0"
+  },
+  "scripts": {
+    "start": "node -r dotenv/config dist",
+    "compile": "rimraf dist && tsc",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --ext .ts src --fix",
+    "tests": "npm run compile && npm run lint",
+    "tests:fix": "npm run compile && npm run lint:fix"
+  },
+  "engines": {
+    "node": ">=v16.x"
+  },
+  "devDependencies": {
+    "@hazmi35/eslint-config": "^4.1.1",
+    "@types/node": "^16.7.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.22.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
+  }
+}
