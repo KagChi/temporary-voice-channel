@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "name": "discord-bot-sapphire-template",
-  "description": "A sapphire framework discord bot template written in typescript.",
+  "name": "temporary-voice-channel",
+  "description": "A open source discord bot that handle temporary voice channel.",
   "dependencies": {
     "@discordjs/builders": "^0.5.0",
     "@sapphire/decorators": "^2.2.0",
@@ -22,6 +22,12 @@
   },
   "engines": {
     "node": ">=v16.x"
+  },
+  "repository": {
+    "url": "https://github.com/KagChi/temporary-voice-channel"
+  },
+  "author": {
+    "name": "KagChi"
   },
   "devDependencies": {
     "@hazmi35/eslint-config": "^4.1.1",
