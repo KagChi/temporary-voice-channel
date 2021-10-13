@@ -4,15 +4,12 @@ import { Message, MessageEmbed } from "discord.js";
 
 @ApplyOptions<CommandOptions>({
     name: "help",
-    description: "get bot help command"
+    description: "get bot help command",
+    requiredClientPermissions: ["SEND_MESSAGES", "EMBED_LINKS"]
 })
 
-export class PingCommand extends Command {
+export class clientCommand extends Command {
     async run(message: Message, args: Args) {
-        for (const command of [...this.container.stores.get("commands").values()]) {
-            this.parseCategory(command);
-        }
-
         const userArgument = await args.restResult("string");
         if (userArgument.success) {
             const command = this.container.stores.get("commands").get(userArgument.value);
@@ -20,14 +17,16 @@ export class PingCommand extends Command {
             const embed = new MessageEmbed()
                 .addField("Description", `${command.description ? command.description : "No description"}`)
                 .addField("Detailed Description", `${command.detailedDescription ? command.detailedDescription : "No detailed description"}`)
-                .addField("Aliases", command.aliases.length > 1 ? `\`${command.aliases.join("` `")}\`` : "No aliases", true);
+                .addField("Aliases", command.aliases.length > 1 ? `\`${command.aliases.join("` `")}\`` : "No aliases", true)
+                .setColor("AQUA");
             return message.channel.send({ embeds: [embed] });
         }
 
-        const categories = [...new Set(this.container.stores.get("commands").map(x => x.category))];
+        const categories = [...new Set(this.container.stores.get("commands").map(x => x.fullCategory[x.fullCategory.length - 1]))];
         const embed = new MessageEmbed()
             .setAuthor(`❯ ${this.container.client.user?.username} command(s) list`, this.container.client.user?.displayAvatarURL(), "https://nezukochan.tech")
-            .setDescription("A list of available commands.");
+            .setDescription("A list of available commands.")
+            .setColor("AQUA");
         for (const category of categories) {
             const commands = this.container.stores.get("commands").filter(x => x.category === category);
             embed.fields.push({
@@ -37,18 +36,5 @@ export class PingCommand extends Command {
             });
         }
         message.channel.send({ embeds: [embed] });
-    }
-
-    public parseCategory(command: Command) {
-        const path = command.path.split("/");
-        // @ts-ignore
-        command.category = path[path.length - 2];
-        return command;
-    }
-}
-
-declare module "@sapphire/framework" {
-    export interface Command {
-        category: string | null;
     }
 }
