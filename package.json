@@ -10,6 +10,9 @@
     "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "enmap": "^5.8.7",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.5.33",
     "ts-node": "^10.3.0"
   },
   "scripts": {
@@ -31,6 +34,7 @@
   },
   "devDependencies": {
     "@hazmi35/eslint-config": "^4.1.1",
+    "@types/moment-duration-format": "^2.2.3",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
