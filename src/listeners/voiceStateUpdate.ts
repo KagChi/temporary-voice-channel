@@ -51,7 +51,7 @@ export class readyEvent extends Listener {
                     await this.container.client.channels.resolve(oldState.channelId!)?.delete();
                     this.container.client.tempVoiceManager.deleteOldUserChannel(newState.member?.user.id!, oldState.channelId!);
                     this.container.client.tempVoiceManager.timeoutCache.delete(oldState.channelId!);
-                }, 5000);
+                }, 2000);
                 this.container.client.tempVoiceManager.timeoutCache.set(oldState.channelId, voiceTimeout);
             }
         }
