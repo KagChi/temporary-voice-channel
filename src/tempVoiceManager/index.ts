@@ -17,9 +17,9 @@ export class tempVoiceManager {
     }
 
     public claimChannel(channelId: Snowflake, newOwnerId: Snowflake) {
-        const getOldData = this.database.filter(x => x.channelId === channelId).array()[0]
-        this.database.delete(getOldData.ownerId)
-        getOldData['ownerId'] = newOwnerId;
+        const getOldData = this.database.filter(x => x.channelId === channelId).array()[0];
+        this.database.delete(getOldData.ownerId);
+        getOldData.ownerId = newOwnerId;
         return this.database.set(newOwnerId, getOldData);
     }
 
