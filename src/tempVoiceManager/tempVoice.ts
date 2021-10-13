@@ -1,4 +1,4 @@
-import { Snowflake } from "discord.js"
+import { Snowflake } from "discord.js";
 
 export interface tempVoice {
     ownerId: Snowflake;

@@ -7,5 +7,5 @@ export const userChannelRoleIdPermissions: OverwriteResolvable[] = [{
     id: "",
     allow: userChannelPermissions
 }];
-export const tempVoiceName: string = "{user.username} Voice"
-export const parentTempVoiceId: Snowflake = ""
+export const tempVoiceName: string = "{user.username} Voice";
+export const parentTempVoiceId: Snowflake = "";

@@ -19,6 +19,7 @@ export class BotClient extends SapphireClient {
             ...clientOptions
         });
     }
+
     public tempVoiceManager = new tempVoiceManager();
 }
 

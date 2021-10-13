@@ -15,5 +15,9 @@
         "@typescript-eslint"
     ],
     "rules": {
+        
+    },
+    "globals": {
+        "NodeJS": true
     }
 }

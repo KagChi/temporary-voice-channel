@@ -8,12 +8,12 @@ export class tempVoiceManager {
     private database: Enmap<Snowflake | number, tempVoice> = new Enmap({ name: "tempVoice" });
 
     public getUserChannel(userId: string, guildId?: Snowflake) {
-        if(guildId) this.database.filter(x => x.guildId === guildId && x.ownerId === userId);
+        if (guildId) this.database.filter(x => x.guildId === guildId && x.ownerId === userId);
         return this.database.get(userId);
     }
 
     public deleteOldUserChannel(userId: Snowflake, channelId?: Snowflake) {
-        if(channelId) this.database.filter(x => x.channelId === channelId && x.ownerId === userId);
+        if (channelId) this.database.filter(x => x.channelId === channelId && x.ownerId === userId);
         return this.database.delete(userId);
     }
 
