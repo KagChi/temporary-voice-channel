@@ -29,6 +29,15 @@ export class LockCommand extends Command {
                 ]
             });
         }
+        if (voiceBitrate.value < 8 || voiceBitrate.value > (message.guild?.premiumTier === "TIER_1" ? 128 : message.guild?.premiumTier === "TIER_2" ? 256 : message.guild?.premiumTier === "TIER_3" ? 384 : 96)) {
+            return message.reply({
+                embeds: [
+                    new MessageEmbed()
+                        .setDescription(`❌ | You must Input valid bitrate beetween 8-${(message.guild?.premiumTier === "TIER_1" ? 128 : message.guild?.premiumTier === "TIER_2" ? 256 : message.guild?.premiumTier === "TIER_3" ? 384 : 96)} .`)
+                        .setColor("AQUA")
+                ]
+            });
+        }
         const userChannel = this.container.client.tempVoiceManager.findChannelId(memberChannel.id).array()[0];
         if (!userChannel) {
             return message.reply({
