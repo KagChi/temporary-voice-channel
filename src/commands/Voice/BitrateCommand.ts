@@ -8,7 +8,7 @@ import { Message, MessageEmbed } from "discord.js";
 })
 
 export class LockCommand extends Command {
-    async run(message: Message, args: Args) {
+    async messageRun(message: Message, args: Args) {
         const memberChannel = message.member?.voice.channel;
         const voiceBitrate = await args.pickResult("integer");
         if (!memberChannel) {

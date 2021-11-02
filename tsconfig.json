@@ -16,5 +16,6 @@
         ],
         "rootDir": "src",
         "outDir": "dist"
-    }
+    }, 
+    "include": ["src/**/*.ts", "src/**/*.json"]
 }

@@ -9,7 +9,7 @@ import { Message, MessageEmbed } from "discord.js";
 })
 
 export class clientCommand extends Command {
-    async run(message: Message, args: Args) {
+    async messageRun(message: Message, args: Args) {
         const userArgument = await args.restResult("string");
         if (userArgument.success) {
             const command = this.container.stores.get("commands").get(userArgument.value);

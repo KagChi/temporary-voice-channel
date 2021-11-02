@@ -10,7 +10,7 @@ import { tempVoiceName, userChannelPermissions, userChannelRoleIdPermissions } f
 })
 
 export class LockCommand extends Command {
-    async run(message: Message) {
+    async messageRun(message: Message) {
         const memberChannel = message.member?.voice.channel;
         if (!memberChannel) {
             return message.reply({

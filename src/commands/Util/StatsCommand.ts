@@ -12,7 +12,7 @@ import * as packageJson from "../../../package.json";
 })
 
 export class PingCommand extends Command {
-    async run(message: Message) {
+    async messageRun(message: Message) {
         const Embed = new MessageEmbed()
             .setTitle(`${this.container.client.user?.username} Usage Statistics`)
             .setThumbnail(this.container.client.user?.displayAvatarURL()!)
