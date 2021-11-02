@@ -30,7 +30,7 @@
     "name": "KagChi"
   },
   "devDependencies": {
-    "@hazmi35/eslint-config": "^4.1.1",
+    "@hazmi35/eslint-config": "^7.0.1",
     "@types/ms": "^0.7.31",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
