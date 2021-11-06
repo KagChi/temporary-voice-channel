@@ -13,7 +13,7 @@ PARENT_CH=
 ```
 - fill `DISCORD_TOKEN` with your discord bot token
 - open `config.ts` file
-- fill `PARENT_CH=` config with parent voice channel id
+- fill `PARENT_CH` config with parent voice channel id
 - you can change granted permissions to user by changing `userChannelPermissions` config
 
 ## Requirements
