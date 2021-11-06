@@ -9,18 +9,12 @@ OWNERS= []
 PREFIX=b!
 ACTIVITY=
 ACTIVITY_TYPE=
+PARENT_CH=
 ```
 - fill `DISCORD_TOKEN` with your discord bot token
 - open `config.ts` file
-- fill `parentTempVoiceId` config with voice channel id
+- fill `PARENT_CH=` config with parent voice channel id
 - you can change granted permissions to user by changing `userChannelPermissions` config
-- some role can be granted some permissions by adding `userChannelRoleIdPermissions`
-```ts
-[{
-    id: "roleId/GuildMemberId",
-    allow: userChannelPermissions
-}];
-```
 
 ## Requirements
 - NodeJS v16.6 or greater
