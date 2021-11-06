@@ -2,7 +2,7 @@ import { CommandOptions, Command } from "@sapphire/framework";
 import { ApplyOptions } from "@sapphire/decorators";
 import { Message, MessageEmbed } from "discord.js";
 import { Util } from "../../util";
-import { tempVoiceName, userChannelPermissions, userChannelRoleIdPermissions } from "../../config";
+import { tempVoiceName, userChannelPermissions } from "../../config";
 
 @ApplyOptions<CommandOptions>({
     name: "claim",
@@ -42,14 +42,15 @@ export class LockCommand extends Command {
         }
 
         this.container.client.tempVoiceManager.claimChannel(memberChannel.id, message.author.id);
+        await memberChannel.edit({ permissionOverwrites: [] });
         await memberChannel.edit({
             name: Util.parseChannelName(tempVoiceName, message.author),
             permissionOverwrites: [
                 {
                     id: message.author.id,
                     allow: userChannelPermissions
-                },
-                ...userChannelRoleIdPermissions
+                }
+
             ]
         });
         return message.reply({

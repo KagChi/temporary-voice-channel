@@ -1,7 +1,7 @@
 import { Listener, ListenerOptions } from "@sapphire/framework";
 import { ApplyOptions } from "@sapphire/decorators";
 import { VoiceState } from "discord.js";
-import { parentTempVoiceId, tempVoiceName, userChannelPermissions, userChannelRoleIdPermissions } from "../config";
+import { parentTempVoiceId, tempVoiceName, userChannelPermissions } from "../config";
 import { Util } from "../util";
 @ApplyOptions<ListenerOptions>({
     name: "voiceStateUpdate"
@@ -35,8 +35,7 @@ export class readyEvent extends Listener {
                         {
                             id: newState.member?.id!,
                             allow: userChannelPermissions
-                        },
-                        ...userChannelRoleIdPermissions
+                        }
                     ]
                 });
                 this.container.client.tempVoiceManager.setUserChannel(newState.member?.id!, {
