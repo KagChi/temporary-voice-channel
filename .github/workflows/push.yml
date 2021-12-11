@@ -1,12 +1,12 @@
 name: Push compiled files
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - "main"
 
 jobs:
-  generate:
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,12 +15,12 @@ jobs:
         with:
           node-version: "16"
       - run: |
-          git fetch origin main
-          git checkout main
+          git fetch origin ${{ github.ref }}
+          git pull origin ${{ github.ref }}
       - name: Installing dependencies
         run: yarn install --frozen-lockfile
-      - name: Compiling files
-        run: yarn test:fix
+      - name: Running linter and compile
+        run: yarn test
       - name: Force add dist
         run: git add dist -f
       - name: Configuring user
@@ -30,4 +30,4 @@ jobs:
       - name: Commit and push
         run: |
           git commit -m "chore(build): from ${{ github.sha }}" || true
-          git push origin master
+          git push origin ${{ github.ref }} || true
