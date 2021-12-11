@@ -20,7 +20,7 @@ jobs:
       - name: Installing dependencies
         run: yarn install --frozen-lockfile
       - name: Running linter and compile
-        run: yarn test
+        run: yarn tests:fix
       - name: Force add dist
         run: git add dist -f
       - name: Configuring user
