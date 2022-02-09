@@ -13,7 +13,7 @@ class tempVoiceManager {
     }
     getUserChannel(userId, guildId) {
         if (guildId)
-            this.database.filter(x => x.guildId === guildId && x.ownerId === userId);
+            return this.database.filter(x => x.guildId === guildId && x.ownerId === userId).array()[0];
         return this.database.get(userId);
     }
     findChannelId(channelId) {
