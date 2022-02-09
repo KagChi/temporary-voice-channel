@@ -5,4 +5,5 @@ export const botActivityType: Exclude<ActivityType, "CUSTOM"> = (process.env.ACT
 export const userChannelPermissions: PermissionResolvable[] = ["MANAGE_CHANNELS"];
 export const tempVoiceName: string = "{user.username} Voice";
 export const parentTempVoiceId: Snowflake[] = JSON.parse(process.env.PARENT_CH ?? "[]");
+export const port: number = process.env.PORT ? (process.env.PORT as unknown as number) : 3000;
 export const botToken: string = process.env.DISCORD_TOKEN ?? "";
