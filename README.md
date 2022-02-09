@@ -2,18 +2,10 @@
 A open source discord bot that handle temporary voice channel.
 
 ## Setup
-- create .env file with value:
-```
-DISCORD_TOKEN=
-OWNERS= []
-PREFIX=b!
-ACTIVITY=
-ACTIVITY_TYPE=
-PARENT_CH=
-```
-- fill `DISCORD_TOKEN` with your discord bot token
-- open `config.ts` file
-- fill `PARENT_CH` config with parent voice channel id
+- create .env file with same as `.env.schema` file
+- open `config.ts` file or just edit the `.env` file instead
+- fill `DISCORD_TOKEN` or `botToken` (if you use ts file as config.) with your discord bot token
+- fill `PARENT_CH` config with parent voice channel id, example: PARENT_CH = ["123123"]
 - you can change granted permissions to user by changing `userChannelPermissions` config
 
 ## Requirements

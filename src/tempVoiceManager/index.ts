@@ -8,7 +8,7 @@ export class tempVoiceManager {
     private database: Enmap<Snowflake | number, tempVoice> = new Enmap({ name: "tempVoice" });
 
     public getUserChannel(userId: Snowflake, guildId?: Snowflake) {
-        if (guildId) this.database.filter(x => x.guildId === guildId && x.ownerId === userId);
+        if (guildId) return this.database.filter(x => x.guildId === guildId && x.ownerId === userId).array()[0];
         return this.database.get(userId);
     }
 

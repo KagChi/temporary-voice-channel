@@ -4,5 +4,5 @@ export const botActivity = process.env.ACTIVITY || "TemporaryVoice Channel";
 export const botActivityType: Exclude<ActivityType, "CUSTOM"> = (process.env.ACTIVITY_TYPE as Exclude<ActivityType, "CUSTOM">)! || "WATCHING";
 export const userChannelPermissions: PermissionResolvable[] = ["MANAGE_CHANNELS"];
 export const tempVoiceName: string = "{user.username} Voice";
-export const parentTempVoiceId: Snowflake = process.env.PARENT_CH || "";
-export const port: number = (process.env.PORT as number | undefined) || 3000;
+export const parentTempVoiceId: Snowflake[] = JSON.parse(process.env.PARENT_CH ?? "[]");
+export const botToken: string = process.env.DISCORD_TOKEN ?? "";
