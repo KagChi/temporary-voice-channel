@@ -3,7 +3,7 @@
   "name": "temporary-voice-channel",
   "description": "A open source discord bot that handle temporary voice channel.",
   "dependencies": {
-    "@discordjs/builders": "^0.12.0",
+    "@discordjs/builders": "^1.1.0",
     "@sapphire/decorators": "^3.1.1",
     "@sapphire/framework": "^2.1.3",
     "@sapphire/plugin-api": "^3.1.1",
