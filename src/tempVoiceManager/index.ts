@@ -1,4 +1,4 @@
-import Collection from "@discordjs/collection";
+import { Collection } from "@discordjs/collection";
 import { Snowflake } from "discord.js";
 import Enmap from "enmap";
 import { tempVoice } from "./tempVoice";
